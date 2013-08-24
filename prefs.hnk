@@ -1,0 +1,14 @@
+'EPS Preferences'(Fact_Card,
+  [Area, [108, 133, 2283, 1025], Columns, [1200, 975]],
+  [2, 3],
+  [Option, Value],
+  ['EPS font', Helvetica],
+  ['EPS resolution', '100'],
+  ['EPS font correction', '-1.5']).
+
+'Hank: File Properties'(Fact_Card,
+  [],
+  [2, 1],
+  [Property, Value],
+  [interior, [61, 99, 674, 580]]).
+

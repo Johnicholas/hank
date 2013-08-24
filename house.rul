@@ -1,0 +1,73 @@
+Start(3,
+  'Copy the question into the left hand column of the storyboard, completing',
+  'the ‘table’, ‘column’, and ‘seek’ rows.',
+  '').
+
+Builtin(5,
+  'Does the name of the current question begin with “Hank: ”?',
+  [Italic('yes: '), 60, 'Hank has a built in procedure for dealing with this question.  Use this'],
+  [60, 'procedure to fill in the find values and the status box, then go to step ', Rule(LeftHand)],
+  [Italic('no: '), 60, 'carry on at step ', Rule(Fact)],
+  '').
+
+Fact(5,
+  'Is there a fact card which matches the question (that is, it must have a matching',
+  'name, number of columns, and column labels) in the database?',
+  [Italic('yes: '), 60, 'continue at step ', Rule(Row)],
+  [Italic('no: '), 60, 'go to step ', Rule(Instruction)],
+  '').
+     
+Row(6,
+  'Is there a row in this fact card which matches the ‘seek’ values in the current',
+  'question?',
+  [Italic('yes: '), 60, 'copy the matching row into the ‘find’ row of the current question, and write'],
+  [60, '‘OK’ in the status box for the current question, then carry on at step ', Rule(LeftHand)],
+  [Italic('no: '), 60, 'write ‘Fail’ in the status box for the current question, then carry on at step ', Rule(LeftHand)],
+  '').
+
+LeftHand(5,
+  'Is this question in the left hand column?',
+  [Italic('yes: '), 60, 'we have finished a whole sub-question, so go to step ', Rule(Copy)],
+  [Italic('no: '), 60, 'we are in an instruction card, and there may be more questions to come, so go to'],
+  [60, 'step ', Rule(Continue)],
+  '').
+
+Instruction(6, 
+  'Is there an instruction card which matches the question (that is, it must have a matching',
+  'name, number of columns, and column labels) in the database?',
+  [Italic('yes: '), 60, 'continue at step ', Rule(PickFirst)],
+  [Italic('no: '), 60, 'we can’t answer this question, so write ‘Fail’ in the status box for the current'],
+  [60, 'question, then go to step ', Rule(LeftHand)],
+  '').
+
+PickFirst(4, 
+  'Pick the first question in this instruction card, and write it in the second column of the',
+  ['storyboard, completing the ‘table’, ‘column’, and ‘seek’ rows.  Then go to step ', Rule(Builtin), ' to'],
+  'answer this question',
+  '').
+
+Continue(6, 
+  'Is there a link from this question in the instruction card, so that the link is either',
+  'unlabelled, or the label on the link matches the status box?',
+  [Italic('yes: '), 60, 'follow the link to the next question, then write it in the next column of the'],
+  [60, 'storyboard, completing the ‘table’, ‘column’, and ‘seek’ rows, and go to step ', Rule(Builtin)],
+  [Italic('no: '), 60, 'continue at step ', Rule(GoBack)],
+  '').
+
+Copy(5,
+  'Copy the value in the status box for the current question into the status box for the',
+  'question in the left hand column of the storyboard.  Then copy the ‘seek’ values',
+  'into the ‘find’ values in the left hand column, putting in any wildcard values when',
+  'you can',
+  '').
+
+GoBack(9, 
+  'Look for the rightmost question in the next row above which doesn’t have a',
+  'complete status box in the left hand column.  Is there one?',
+  [Italic('yes: '), 60, 'copy the ‘find’ values you’ve just written down into this question above, and'],
+  [60, 'copy the status box there too.  Then carry on trying to answer the question above,'],
+  [60, 'at step ', Rule(Builtin)],
+  [Italic('no: '), 60, 'write out any wildcard values in the current question, and in any questions on'],
+  [60, 'the same row.  Then stop answering all questions, you’ve finished running'],
+  [60, 'the model'],
+  '').

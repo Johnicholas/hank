@@ -1,0 +1,192 @@
+%!PS-Adobe-3.0 EPSF-3.0
+%%BoundingBox: 10 0 169 74
+%%Title: Untitled
+%%Creator: Common Graphics EPS 0.1
+%%DocumentNeededResources: (atend)
+%%EndComments
+%%BeginProcSet: CommonLispGraphics_header 1 0
+48 dict begin
+/WordBreak ( ) def
+/FontCorrection -1.5 def
+/cgshow
+  { currentfont /FontBBox get aload pop currentfont /FontMatrix get transform FontCorrection add /dy exch def pop pop pop
+    0 dy neg rmoveto show 0 dy rmoveto } def
+/DrawBox {
+  /top exch def
+  /right exch def
+  /bottom exch def
+  /left exch def
+  currentpoint currentdash currentrgbcolor [] 0 setdash 1 setgray
+  newpath left bottom moveto left top lineto right top lineto right bottom lineto closepath stroke
+  setrgbcolor setdash 
+  newpath left bottom moveto left top lineto right top lineto right bottom lineto closepath stroke moveto } def
+/DrawStringInRectangle {
+  /vjustify exch def
+  /hjustify exch def
+  currentfont /FontBBox get aload pop exch pop exch sub currentfont /FontMatrix get transform
+    /lineheight exch def pop
+  /top exch def
+  /right exch def
+  /bottom exch def
+  /left exch def
+  /textstring exch def
+  currentfont /FontBBox get aload pop currentfont /FontMatrix get transform /ascent exch def pop pop pop
+  /width right left sub def
+  /height top bottom sub def
+
+  /BreakIntoLines {
+    /proc exch def
+    /linewidth exch def
+    /textstring exch def
+    /breakwidth WordBreak stringwidth pop def
+    /currentwidth 0 def
+    /lastwordbreak 0 def
+    /startchar 0 def
+    /restoftext textstring def
+    { restoftext WordBreak search
+      { /nextword exch def pop
+        /restoftext exch def
+        /wordwidth nextword stringwidth pop def
+        currentwidth wordwidth add linewidth gt
+        { textstring startchar lastwordbreak startchar sub getinterval 
+          proc
+          /startchar lastwordbreak def
+          /currentwidth wordwidth breakwidth add def }
+        { /currentwidth currentwidth wordwidth add
+          breakwidth add def }
+        ifelse
+        /lastwordbreak lastwordbreak nextword length add 1 add def }
+      { pop exit }
+      ifelse }
+    loop
+    /lastchar textstring length def
+    textstring startchar lastchar startchar sub getinterval proc } def
+  /LineCount {
+    /lines 0 def
+    { pop /lines lines 1 add def } BreakIntoLines
+    lines } def
+  /StringTrim {
+    /thestring exch def
+    /textindex thestring length 1 sub def
+    { thestring textindex get 32 ne { exit } if textindex 0 eq {exit} if
+      /textindex textindex 1 sub def } loop
+    thestring 0 textindex 1 add getinterval } def
+  /textheight textstring width LineCount lineheight mul def
+  /yposition height textheight sub vjustify mul top exch sub ascent sub FontCorrection sub def
+  textstring width
+  { StringTrim /linestring exch def
+    /drawwidth linestring stringwidth pop def
+    /dleft left width drawwidth sub hjustify mul add def
+    /dtop yposition def
+    currentrgbcolor currentpoint newpath
+    dleft dtop moveto drawwidth 0 rlineto 0 lineheight rlineto drawwidth neg 0 rlineto 0 lineheight neg rlineto closepath
+    1 setgray fill moveto setrgbcolor
+    dleft dtop moveto linestring show
+    /yposition yposition lineheight sub def }
+  BreakIntoLines } def
+/concatprocs
+  { /proc2 exch cvlit def
+    /proc1 exch cvlit def
+    /newproc proc1 length proc2 length add array def
+    newproc 0 proc1 putinterval
+    newproc proc1 length proc2 putinterval
+    newproc cvx } def
+/graphimage
+  { /py exch def
+    /px exch def
+    /picstr px 8 div ceiling cvi string def
+    gsave
+    translate scale
+    { 1 exch sub } currenttransfer concatprocs settransfer
+    px py 1 [px 0 0 py neg 0 py]
+    { currentfile picstr readhexstring pop } image
+    grestore 
+  } def
+%%EndProcSet
+%%BeginSetup
+%%IncludeResource: font Helvetica
+/Helvetica findfont 13 scalefont setfont
+0 381 moveto
+0.5 setlinewidth
+/FontCorrection -1.5 def
+%%EndSetup
+[] 0 setdash
+0.0 0.0 0.0 setrgbcolor
+/Helvetica findfont 9 scalefont setfont
+1.0 1.0 1.0 setrgbcolor
+currentpoint newpath 11 73 moveto 168 73 lineto 168 1 lineto 11 1 lineto 11 73 lineto closepath fill moveto
+0.0 0.0 0.0 setrgbcolor
+[] 0 setdash
+0.0 0.0 0.0 setrgbcolor
+%%IncludeResource: font Helvetica-Bold
+/Helvetica-Bold findfont 9 scalefont setfont
+0.749019607843137 0.749019607843137 0.749019607843137 setrgbcolor
+currentpoint newpath 11 73 moveto 168 73 lineto 168 60 lineto 11 60 lineto 11 73 lineto closepath fill moveto
+0.0 0.0 0.0 setrgbcolor
+13 71 moveto
+(Fido: Ask) cgshow
+11 60 168 73 DrawBox
+11 1 168 73 DrawBox
+[] 0 setdash
+0.0 0.0 0.0 setrgbcolor
+/Helvetica findfont 9 scalefont setfont
+1.0 1.0 1.0 setrgbcolor
+currentpoint newpath 20 50 moveto 160 50 lineto 160 9 lineto 20 9 lineto 20 50 lineto closepath fill moveto
+0.0 0.0 0.0 setrgbcolor
+[12 3] 0 setdash
+0.0 0.0 0.0 setrgbcolor
+/Helvetica-Bold findfont 9 scalefont setfont
+1.0 1.0 1.0 setrgbcolor
+currentpoint newpath 20 50 moveto 160 50 lineto 160 37 lineto 20 37 lineto 20 50 lineto closepath fill moveto
+0.0 0.0 0.0 setrgbcolor
+22 48 moveto
+(Sides) cgshow
+20 37 160 50 DrawBox
+20 9 160 50 DrawBox
+[12 3] 0 setdash
+0.0 0.0 0.0 setrgbcolor
+/Helvetica findfont 9 scalefont setfont
+1.0 1.0 1.0 setrgbcolor
+currentpoint newpath 20 37 moveto 90 37 lineto 90 24 lineto 20 24 lineto 20 37 lineto closepath fill moveto
+0.0 0.0 0.0 setrgbcolor
+22 35 moveto
+(Shape) cgshow
+20 24 90 37 DrawBox
+[12 3] 0 setdash
+0.0 0.0 0.0 setrgbcolor
+/Helvetica findfont 9 scalefont setfont
+1.0 1.0 1.0 setrgbcolor
+currentpoint newpath 90 37 moveto 160 37 lineto 160 24 lineto 90 24 lineto 90 37 lineto closepath fill moveto
+0.0 0.0 0.0 setrgbcolor
+92 35 moveto
+(Number) cgshow
+90 24 160 37 DrawBox
+[12 3] 0 setdash
+0.0 0.0 0.0 setrgbcolor
+/Helvetica findfont 9 scalefont setfont
+1.0 1.0 1.0 setrgbcolor
+currentpoint newpath 20 22 moveto 90 22 lineto 90 9 lineto 20 9 lineto 20 22 lineto closepath fill moveto
+0.0 0.0 0.0 setrgbcolor
+22 20 moveto
+(Rectangle) cgshow
+20 9 90 22 DrawBox
+[12 3] 0 setdash
+0.0 0.0 0.0 setrgbcolor
+/Helvetica findfont 9 scalefont setfont
+1.0 1.0 1.0 setrgbcolor
+currentpoint newpath 90 22 moveto 160 22 lineto 160 9 lineto 90 9 lineto 90 22 lineto closepath fill moveto
+0.0 0.0 0.0 setrgbcolor
+92 20 moveto
+(5) cgshow
+90 9 160 22 DrawBox
+[] 0 setdash
+0.0 0.0 0.0 setrgbcolor
+/Helvetica findfont 9 scalefont setfont
+[] 0 setdash
+0.0 0.0 0.0 setrgbcolor
+/Helvetica findfont 9 scalefont setfont
+%%Trailer
+%%DocumentNeededResources: font Helvetica-Bold
+%%+ font Helvetica
+end
+%%EOF
